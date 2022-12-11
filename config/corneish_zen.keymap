@@ -9,9 +9,9 @@
 };
 
 #define QWERTY 0
-#define LWR 1
-#define RSE 2
-#define CFG 3
+#define L_LWR 1
+#define L_RSE 2
+#define L_CFG 3
 
 / {
 
@@ -40,6 +40,13 @@
           };
         };
 
+        conditional_layers {
+          compatible = "zmk,conditional-layers";
+          tri_layer {
+            if-layers = <L_LWR L_RSE>;
+            then-layer = <L_CFG>;
+          };
+        };
 
         keymap {
                 compatible = "zmk,keymap";
@@ -50,7 +57,7 @@
 &kp ESC         &kp Q   &kp W   &kp E   &kp R       &kp T                   &kp Y      &kp U        &kp I       &kp O       &kp P        &kp BSPC
 &mt LCTRL TAB   &kp A   &kp S   &kp D   &kp F       &kp G                   &kp H      &kp J        &kp K       &kp L       &kp SEMI     &kp SQT
 &kp LSHFT       &kp Z   &kp X   &kp C   &kp V       &kp B                   &kp N      &kp M        &kp COMMA   &kp DOT     &kp FSLH     &mt RSHFT GRAVE
-                                &td0    &mo LWR     &kp SPACE               &kp RET    &mo RSE      &mt RALT BSLH
+                                &td0    &mo L_LWR   &kp SPACE               &kp RET    &mo L_RSE    &mt RALT BSLH
                         >;
                 };
 
@@ -60,7 +67,7 @@
 &trans  &kp EXCL    &kp DLLR    &kp LBRC    &kp RBRC    &kp PIPE                &kp AMPS    &kp N7      &kp N8     &kp N9      &kp KP_MULTIPLY &kp BSLH
 &trans  &kp AT      &kp PRCNT   &kp LPAR    &kp RPAR    &kp CAPS                &kp UNDER   &kp N4      &kp N5     &kp N6      &kp MINUS       &kp DQT
 &trans  &kp HASH    &kp CARET   &kp LBKT    &kp RBKT    &kp TILDE               &kp EQUAL   &kp N1      &kp N2     &kp N3      &kp PLUS        &kp QMARK
-                                &trans      &trans      &trans                  &trans      &mo CFG     &kp N0
+                                &trans      &trans      &trans                  &trans      &trans      &kp N0
                         >;
                 };
 
@@ -70,7 +77,7 @@
 &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6              &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &trans      &trans
 &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12             &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp SEMI    &kp DQT
 &trans      &kp K_UNDO  &kp K_CUT   &kp K_COPY  &kp K_PASTE &kp K_REDO          &trans      &trans      &trans      &trans      &trans      &trans
-                                    &trans      &mo CFG     &kp BSPC            &trans      &trans      &trans
+                                    &trans      &trans      &kp BSPC            &trans      &trans      &trans
                         >;
                 };
 
