@@ -100,10 +100,10 @@
                 lwr_layer {
                         label = "LOWER";
                         bindings = <
-&trans  &kp EXCL    &kp DLLR    &kp LBRC    &kp RBRC    &kp PIPE                &kp AMPS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &kp BSLH
-&trans  &kp AT      &kp PRCNT   &kp LPAR    &kp RPAR    &sk LGUI                &kp UNDER  &kp N4  &kp N5  &kp N6  &kp MINUS        &kp DQT
-&trans  &kp HASH    &kp CARET   &kp LBKT    &kp RBKT    &kp TILDE               &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp PLUS         &kp QMARK
-                                &trans      &trans      &trans                  &trans     &trans  &kp N0
+&trans  &kp EXCL    &kp DLLR    &kp LBRC    &kp RBRC    &kp PIPE                &kp AMPS    &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &kp BSLH
+&trans  &kp AT      &kp PRCNT   &kp LPAR    &kp RPAR    &sk LGUI                &kp UNDER   &kp N4  &kp N5  &kp N6  &kp MINUS        &kp DQT
+&trans  &kp HASH    &kp CARET   &kp LBKT    &kp RBKT    &kp TILDE               &kp EQUAL   &kp N1  &kp N2  &kp N3  &kp PLUS         &kp QMARK
+                                &trans      &trans      &trans                  &kp LA(RET) &trans  &kp N0
                         >;
                 };
 
