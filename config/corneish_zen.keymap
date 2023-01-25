@@ -14,6 +14,10 @@
 #define L_FUN 3
 #define L_CFG 4
 
+#define ACC_OPEN LA(GRAVE)
+#define ACC_CLOSE LA(E)
+#define UMLAUT LA(U)
+
 / {
 
         macros {
@@ -28,42 +32,6 @@
                 , <&macro_release &kp LGUI>
                 ;
           };
-
-          accent_opened: accent_opened {
-            label = "ZM_accent_opened";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <1>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp GRAVE>
-                , <&macro_release &kp LALT>
-                ;
-          };
-
-          accent_closed: accent_closed {
-            label = "ZM_accent_closed";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <1>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp E>
-                , <&macro_release &kp LALT>
-                ;
-          };
-
-          umlaut: umlaut {
-            label = "ZM_umlaut";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <1>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp U>
-                , <&macro_release &kp LALT>
-                ;
-          };
         };
 
         behaviors {
@@ -74,6 +42,14 @@
             tapping-term-ms = <200>;
             bindings = <&kp LGUI>, <&gui_and_space>;
           };
+
+		  col_semi: col_semi {
+		    compatible = "zmk,behavior-mod-morph";
+			label = "COL_SEMI";
+			#binding-cells = <0>;
+			bindings = <&kp COLON>, <&kp SEMI>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		  };
         };
 
         conditional_layers {
@@ -90,19 +66,19 @@
                 default_layer {
                         label = "QWERTY";
                         bindings = <
-&kp ESC         &kp Q   &kp W   &kp E   &kp R       &kp T                       &kp Y    &kp U      &kp I            &kp O    &kp P     &kp BSPC
-&mt LCTRL TAB   &kp A   &kp S   &kp D   &kp F       &kp G                       &kp H    &kp J      &kp K            &kp L    &kp SEMI  &mt LALT SQT
-&kp LSHFT       &kp Z   &kp X   &kp C   &kp V       &kp B                       &kp N    &kp M      &kp COMMA        &kp DOT  &kp FSLH  &mt RSHFT BSLH
-                                &td0    &mo L_LWR   &kp SPACE                   &kp RET  &mo L_RSE  &lt L_FUN GRAVE
+&mt LALT ESC    &kp Q   &kp W   &kp E   &kp R       &kp T                       &kp Y    &kp U      &kp I            &kp O    &kp P     &kp BSPC
+&mt LCTRL TAB   &kp A   &kp S   &kp D   &kp F       &kp G                       &kp H    &kp J      &kp K            &kp L    &col_semi &mt RALT SQT
+&mt LSHFT GRAVE &kp Z   &kp X   &kp C   &kp V       &kp B                       &kp N    &kp M      &kp COMMA        &kp DOT  &kp FSLH  &mt RSHFT BSLH
+                                &td0    &mo L_LWR   &mt LSHFT SPACE             &kp RET  &mo L_RSE  &lt L_FUN TAB
                         >;
                 };
 
                 lwr_layer {
                         label = "LOWER";
                         bindings = <
-&trans  &kp EXCL    &kp DLLR    &kp LBRC    &kp RBRC    &kp PIPE                &kp AMPS    &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &kp BSLH
-&trans  &kp AT      &kp PRCNT   &kp LPAR    &kp RPAR    &sk LGUI                &kp UNDER   &kp N4  &kp N5  &kp N6  &kp MINUS        &kp DQT
-&trans  &kp HASH    &kp CARET   &kp LBKT    &kp RBKT    &kp TILDE               &kp EQUAL   &kp N1  &kp N2  &kp N3  &kp PLUS         &kp QMARK
+&trans  &kp EXCL    &kp DLLR    &kp LBRC    &kp RBRC    &kp TILDE               &kp AMPS    &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &kp BSLH
+&trans  &kp AT      &kp PRCNT   &kp LPAR    &kp RPAR    &sk LGUI                &kp UNDER   &kp N4  &kp N5  &kp N6  &kp MINUS        &kp DOT
+&trans  &kp HASH    &kp CARET   &kp LBKT    &kp RBKT    &kp PIPE                &kp EQUAL   &kp N1  &kp N2  &kp N3  &kp PLUS         &kp QMARK
                                 &trans      &trans      &trans                  &kp LA(RET) &trans  &kp N0
                         >;
                 };
@@ -110,7 +86,7 @@
                 rse_layer {
                         label = "RAISE";
                         bindings = <
-&none   &none       &accent_opened  &accent_closed  &umlaut      &none          &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans    &trans
+&none   &none       &kp ACC_OPEN    &kp ACC_CLOSE   &kp UMLAUT   &none          &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans    &trans
 &none   &none       &sk LSHFT       &sk LALT        &sk LCTRL    &sk LGUI       &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp SEMI  &kp DQT
 &trans  &kp K_UNDO  &kp K_CUT       &kp K_COPY      &kp K_PASTE  &kp K_REDO     &trans    &trans     &trans     &trans     &trans    &trans
                                     &trans          &trans       &kp BSPC       &trans    &trans     &trans
