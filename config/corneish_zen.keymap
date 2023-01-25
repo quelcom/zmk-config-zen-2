@@ -43,6 +43,14 @@
             bindings = <&kp LGUI>, <&gui_and_space>;
           };
 
+          td_lt: tap_dance_mod_tap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MOD_TAP";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&lt L_FUN TAB>, <&kp LC(A)>;
+          };
+
 		  col_semi: col_semi {
 		    compatible = "zmk,behavior-mod-morph";
 			label = "COL_SEMI";
@@ -69,7 +77,7 @@
 &mt LALT ESC    &kp Q   &kp W   &kp E   &kp R       &kp T                       &kp Y    &kp U      &kp I            &kp O    &kp P     &kp BSPC
 &mt LCTRL TAB   &kp A   &kp S   &kp D   &kp F       &kp G                       &kp H    &kp J      &kp K            &kp L    &col_semi &mt RALT SQT
 &mt LSHFT GRAVE &kp Z   &kp X   &kp C   &kp V       &kp B                       &kp N    &kp M      &kp COMMA        &kp DOT  &kp FSLH  &mt RSHFT BSLH
-                                &td0    &mo L_LWR   &mt LSHFT SPACE             &kp RET  &mo L_RSE  &lt L_FUN TAB
+                                &td0    &mo L_LWR   &mt LSHFT SPACE             &kp RET  &mo L_RSE  &td_lt
                         >;
                 };
 
