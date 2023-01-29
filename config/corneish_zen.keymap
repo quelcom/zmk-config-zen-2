@@ -8,6 +8,15 @@
   };
 };
 
+&mt {
+    flavor = "tap-preferred"
+    tapping-term-ms = <125>;
+}
+
+&lt {
+    tapping-term-ms = <125>;
+}
+
 #define QWERTY 0
 #define L_LWR 1
 #define L_RSE 2
