@@ -9,13 +9,13 @@
 };
 
 &mt {
-    flavor = "tap-preferred"
+    flavor = "tap-preferred";
     tapping-term-ms = <125>;
-}
+};
 
 &lt {
     tapping-term-ms = <125>;
-}
+};
 
 #define QWERTY 0
 #define L_LWR 1
@@ -64,7 +64,7 @@
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LGUI>, <&gui_and_space>;
+            bindings = <&mt LGUI ESC>, <&gui_and_space>;
           };
 
           col_semi: col_semi {
