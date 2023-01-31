@@ -66,6 +66,30 @@
             tapping-term-ms = <200>;
             bindings = <&mt LGUI ESC>, <&gui_and_space>;
           };
+
+          tdp: td_par {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_PAR";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
+          };
+
+          tdc: td_curly {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CURLY";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LBRC>, <&kp RBRC>;
+          };
+
+          tdsq: td_sq {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SQ";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LBKT>, <&kp RBKT>;
+          };
         };
 
         conditional_layers {
@@ -85,17 +109,17 @@
 &mt LALT ESC    &kp Q   &kp W   &kp E   &kp R       &kp T                       &kp Y    &kp U      &kp I       &kp O    &kp P     &kp BSPC
 &mt LCTRL TAB   &kp A   &kp S   &kp D   &kp F       &kp G                       &kp H    &kp J      &kp K       &kp L    &kp SEMI  &mt RALT SQT
 &mt LSHFT GRAVE &kp Z   &kp X   &kp C   &kp V       &kp B                       &kp N    &kp M      &kp COMMA	&kp DOT  &kp FSLH  &mt RSHFT BSLH
-                                &td0    &lt L_LWR BSPC   &mt LSHFT SPACE        &kp RET  &lt L_RSE TAB  &mt RCTRL TMUX
+                                &td0    &lt L_LWR BSPC   &mt LSHFT SPACE        &mt RALT RET  &lt L_RSE TAB  &mt RCTRL TMUX
                         >;
                 };
 
                 lwr_layer {
                         label = "LOWER";
                         bindings = <
-&trans  &kp EXCL    &kp DLLR    &kp LBRC    &kp RBRC    &kp TILDE               &kp AMPS    &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &kp BSLH
-&trans  &kp AT      &kp PRCNT   &kp LPAR    &kp RPAR    &sk LGUI                &kp UNDER   &kp N4  &kp N5  &kp N6  &kp MINUS        &kp DOT
-&trans  &kp HASH    &kp CARET   &kp LBKT    &kp RBKT    &kp PIPE                &kp EQUAL   &kp N1  &kp N2  &kp N3  &kp PLUS         &kp COMMA
-                                &trans      &trans      &trans                  &kp LA(RET) &trans  &kp N0
+&trans  &kp EXCL    &kp DLLR    &tdc    &kp DQT    &kp BSLH               &kp AMPS    &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &kp BSLH
+&trans  &kp AT      &kp PRCNT   &tdp    &kp GRAVE  &sk LGUI               &kp UNDER   &kp N4  &kp N5  &kp N6  &kp MINUS        &kp DOT
+&trans  &kp HASH    &kp CARET   &tdsq   &kp SQT    &kp PIPE               &kp EQUAL   &kp N1  &kp N2  &kp N3  &kp PLUS         &kp COMMA
+                                &trans  &trans     &trans                 &kp LA(RET) &lt L_RSE DOT  &kp N0
                         >;
                 };
 
