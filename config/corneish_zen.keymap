@@ -2,21 +2,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-/ {
-  chosen {
-    zmk,matrix_transform = &default_transform;
-  };
-};
-
-&mt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <125>;
-};
-
-&lt {
-    tapping-term-ms = <125>;
-};
-
 #define QWERTY 0
 #define L_LWR 1
 #define L_RSE 2
@@ -32,6 +17,21 @@
 
 #define RLWL LA(LEFT)
 #define RLWR LA(RIGHT)
+
+/ {
+  chosen {
+    zmk,matrix_transform = &default_transform;
+  };
+};
+
+&mt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <125>;
+};
+
+&lt {
+    tapping-term-ms = <125>;
+};
 
 / {
 
@@ -54,6 +54,18 @@
                 = <&macro_press &kp LGUI>
                 , <&macro_tap &kp SPACE>
                 , <&macro_release &kp LGUI>
+                ;
+          };
+
+          blockfence: blockfence {
+            label = "ZM_blockfence";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <1>;
+            bindings
+                = <&macro_tap &kp GRAVE>
+                , <&macro_tap &kp GRAVE>
+                , <&macro_tap &kp GRAVE>
                 ;
           };
         };
@@ -96,7 +108,7 @@
             label = "TD_SQ";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp GRAVE>, <&kp TILDE>;
+            bindings = <&kp GRAVE>, <&kp TILDE>, <&blockfence>;
           };
         };
 
