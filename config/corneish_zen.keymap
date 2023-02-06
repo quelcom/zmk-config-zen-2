@@ -45,7 +45,7 @@
           combo_skshift {
             timeout-ms = <40>;
             key-positions = <16 19>;
-            bindings = <&sk LSHIFT>;
+            bindings = <&skq LSHIFT>;
           };
         };
 
@@ -114,6 +114,15 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp GRAVE>, <&kp TILDE>, <&blockfence>;
+          };
+
+          skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_KEY_QUICK_RELEASE";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <1000>;
+            quick-release;
           };
         };
 
