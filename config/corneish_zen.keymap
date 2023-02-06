@@ -42,6 +42,11 @@
             key-positions = <40 41>;
             bindings = <&mo L_CFG>;
           };
+          combo_skshift {
+            timeout-ms = <40>;
+            key-positions = <16 19>;
+            bindings = <&sk LSHIFT>;
+          };
         };
 
         macros {
@@ -147,7 +152,7 @@
                         label = "RAISE";
                         bindings = <
 &none   &none       &kp ACC_OPEN    &kp ACC_CLOSE   &kp UMLAUT   &none          &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans    &trans
-&none   &none       &sk LSHFT       &sk LALT        &sk LCTRL    &sk LGUI       &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp SEMI  &kp DQT
+&none   &none       &sk LSHFT       &sk LALT        &sk LCTRL    &sk LGUI       &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp COLON &kp DQT
 &trans  &kp K_UNDO  &kp K_CUT       &kp K_COPY      &kp K_PASTE  &kp K_REDO     &kp RLWL  &trans     &trans     &kp RLWR   &trans    &trans
                                     &trans          &trans       &kp BSPC       &trans    &trans     &trans
                         >;
