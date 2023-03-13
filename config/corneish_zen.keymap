@@ -61,18 +61,6 @@
                 , <&macro_release &kp LGUI>
                 ;
           };
-
-          blockfence: blockfence {
-            label = "ZM_blockfence";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <1>;
-            bindings
-                = <&macro_tap &kp GRAVE>
-                , <&macro_tap &kp GRAVE>
-                , <&macro_tap &kp GRAVE>
-                ;
-          };
         };
 
         behaviors {
@@ -82,14 +70,6 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LGUI>, <&gui_and_space>;
-          };
-
-          tdp: td_par {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_PAR";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LPAR>, <&kp RPAR>;
           };
 
           tdc: td_curly {
@@ -106,14 +86,6 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LBKT>, <&kp RBKT>;
-          };
-
-          tdgrave: td_grave {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_SQ";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp GRAVE>, <&kp TILDE>, <&blockfence>;
           };
 
           skq: sticky_key_quick_release {
