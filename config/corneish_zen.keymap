@@ -8,7 +8,6 @@
 #define L_FUN 3
 #define L_CFG 4
 
-#define GSPACE LGUI(SPACE)
 #define TMUX LC(B)
 
 #define ACC_OPEN LA(GRAVE)
