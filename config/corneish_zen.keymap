@@ -49,20 +49,6 @@
           };
         };
 
-        macros {
-          gui_and_space: gui_and_space {
-            label = "ZM_gui_and_space";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <1>;
-            bindings
-                = <&macro_press &kp LGUI>
-                , <&macro_tap &kp SPACE>
-                , <&macro_release &kp LGUI>
-                ;
-          };
-        };
-
         behaviors {
           td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
