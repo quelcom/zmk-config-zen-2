@@ -10,6 +10,7 @@
 
 #define TMUX LC(B)
 
+#define MOD1 LA(LSHIFT)
 #define MOD2 LA(LC(LSHIFT))
 
 #define ACC_OPEN LA(GRAVE)
@@ -110,7 +111,7 @@
 &mt LALT ESC    &kp Q   &kp W   &kp E   &kp R       &kp T                       &kp Y    &kp U      &kp I       &kp O    &kp P     &kp BSPC
 &mt LCTRL TAB   &kp A   &kp S   &kp D   &kp F       &kp G                       &kp H    &kp J      &kp K       &kp L    &kp SEMI  &mt RALT SQT
 &skq LSHFT      &kp Z   &kp X   &kp C   &kp V       &kp B                       &kp N    &kp M      &kp COMMA	&kp DOT  &kp FSLH  &mt RSHFT TMUX
-                                &td0    &mo L_LWR   &kp SPACE                   &kp RET  &mo L_RSE  &skq LA(LSHIFT)
+                                &td0    &mo L_LWR   &kp SPACE                   &kp RET  &mo L_RSE  &skq MOD1
                         >;
                 };
 
