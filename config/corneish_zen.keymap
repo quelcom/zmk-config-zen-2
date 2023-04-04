@@ -111,7 +111,7 @@
 &mt LALT ESC    &kp Q   &kp W   &kp E   &kp R       &kp T                       &kp Y    &kp U      &kp I       &kp O    &kp P     &kp BSPC
 &mt LCTRL TAB   &kp A   &kp S   &kp D   &kp F       &kp G                       &kp H    &kp J      &kp K       &kp L    &kp SEMI  &mt RALT SQT
 &skq LSHFT      &kp Z   &kp X   &kp C   &kp V       &kp B                       &kp N    &kp M      &kp COMMA	&kp DOT  &kp FSLH  &mt RSHFT TMUX
-                                &td0    &mo L_LWR   &kp SPACE                   &kp RET  &mo L_RSE  &skq MOD1
+                                &td0    &mo L_LWR   &kp SPACE                   &kp RET  &mo L_RSE  &skq LSHIFT(LALT)
                         >;
                 };
 
@@ -119,7 +119,7 @@
                         label = "LOWER";
                         bindings = <
 &trans  &kp EXCL    &kp DLLR    &tdc     &kp GRAVE  &kp TILDE              &kp AMPS    &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &kp LA(BSPC)
-&trans  &kp AT      &kp PRCNT   &tdp     &skq MOD2  &sk LGUI               &kp UNDER   &kp N4  &kp N5  &kp N6  &kp MINUS        &kp DOT
+&trans  &kp AT      &kp PRCNT   &tdp     &skq LSHIFT(LCTRL)  &sk LGUI               &kp UNDER   &kp N4  &kp N5  &kp N6  &kp MINUS        &kp DOT
 &trans  &kp HASH    &kp CARET   &tdsq    &kp BSLH   &kp PIPE               &kp EQUAL   &kp N1  &kp N2  &kp N3  &kp PLUS         &trans
                                 &trans   &trans     &trans                 &kp LA(RET) &trans  &kp N0
                         >;
