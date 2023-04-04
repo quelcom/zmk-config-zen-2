@@ -10,8 +10,8 @@
 
 #define TMUX LC(B)
 
-#define MOD1 LA(LSHIFT)
-#define MOD2 LA(LC(LSHIFT))
+#define MOD1 LS(LA)
+#define MOD2 LS(LA(LCTRL))
 
 #define ACC_OPEN LA(GRAVE)
 #define ACC_CLOSE LA(E)
