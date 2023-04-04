@@ -118,7 +118,7 @@
                         label = "LOWER";
                         bindings = <
 &trans  &kp EXCL    &kp DLLR    &tdc     &kp GRAVE  &kp TILDE              &kp AMPS    &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &kp LA(BSPC)
-&trans  &kp AT      &kp PRCNT   &tdp     &sqk MOD2  &sk LGUI               &kp UNDER   &kp N4  &kp N5  &kp N6  &kp MINUS        &kp DOT
+&trans  &kp AT      &kp PRCNT   &tdp     &skq MOD2  &sk LGUI               &kp UNDER   &kp N4  &kp N5  &kp N6  &kp MINUS        &kp DOT
 &trans  &kp HASH    &kp CARET   &tdsq    &kp BSLH   &kp PIPE               &kp EQUAL   &kp N1  &kp N2  &kp N3  &kp PLUS         &trans
                                 &trans   &trans     &trans                 &kp LA(RET) &trans  &kp N0
                         >;
