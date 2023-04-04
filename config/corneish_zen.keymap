@@ -10,9 +10,6 @@
 
 #define TMUX LC(B)
 
-#define MOD1 LSHIFT(LALT)
-#define MOD2 LSHIFT(LALT(LCTRL))
-
 #define ACC_OPEN LA(GRAVE)
 #define ACC_CLOSE LA(E)
 #define UMLAUT LA(U)
