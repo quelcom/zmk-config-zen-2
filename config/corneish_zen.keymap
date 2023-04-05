@@ -88,6 +88,7 @@
             bindings = <&kp>;
             release-after-ms = <1000>;
             quick-release;
+            ignore-modifiers;
           };
         };
 
